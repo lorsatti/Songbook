@@ -25,7 +25,7 @@ if (BANDNAME != '') document.title = BANDNAME
 // register service worker
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/service-worker.js')
+    .register('/sw.js')
     .then(function(registration) {
       // registration worked
       console.log('Registration succeeded.')

@@ -3,7 +3,7 @@
 </template>
 <script>
     // song imports
-    import Hurt from '../assets/songs/JohnnyCash/hurt.html'
+    import Hurt from '../assets/songs/JohnnyCash/hurt.txt'
 
     export default {
         name: 'Grid',
@@ -131,15 +131,6 @@
                     },
                     pause: { name: 'Pause', artist: '', files: [{ capo: 0, file: '<h3>Pause</h3>' }], infos: [], stageDirections: [] }
                 }
-
-                // put your music sources here
-                , albums: [
-                    {
-                        name: 'My Album', albumArtist: 'My Band', albumArt: 'secretbase.jpg', path: 'https://moeplayer.b0.upaiyun.com/aplayer/', tracks: [
-                            { name: "Secretbase", file: 'secretbase.mp3' }
-                        ]
-                    }
-                ]
 
             }
         }

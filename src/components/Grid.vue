@@ -57,7 +57,7 @@
                 </b-container>
             </b-col>
             <b-col lg="8 ">
-                <b-container fluid class="song" v-html="currentSongFile"></b-container fluid>
+                <b-container fluid class="song" v-html="format(currentSongFile)"></b-container fluid>
             </b-col>
         </b-row>
 
@@ -122,7 +122,7 @@
 </template>
 
 <script>
-    import ChordSheetJS from 'chordsheetjs';
+    import ChordSheetJS from 'chordsheetjs'
     import Aplayer from 'vue-aplayer'
 
     export default {
@@ -173,6 +173,10 @@
             }
         },
         methods: {
+            format(chordSheet) {
+              const song = new ChordSheetJS.ChordProParser().parse(chordSheet);
+              return new ChordSheetJS.HtmlDivFormatter().format(song);
+            },
             getSongIndex(song) {
                 if ((this.currentSongbook.songs.indexOf(song) + 1).toString() == 0) return ""
                 else return (this.currentSongbook.songs.indexOf(song) + 1).toString() + "."
